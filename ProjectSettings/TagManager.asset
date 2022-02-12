@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Text
+  - PauseMenu
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3886175397
+    locked: 0
+  - name: Paths
+    uniqueID: 402314941
+    locked: 0
+  - name: Gates
+    uniqueID: 636268393
+    locked: 0
+  - name: Text
+    uniqueID: 2444675195
+    locked: 0
+  - name: Menu
+    uniqueID: 2621300467
+    locked: 0
