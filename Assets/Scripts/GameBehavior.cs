@@ -10,17 +10,13 @@ using UnityEngine.UI;
 
 public class GameBehavior : MonoBehaviour
 {
-    public GameObject character;
     public Text textbox;
-    public GTimer characterTimeout;
 
     private LevelGenerator levelGen;
 
     public Color selected;
 
     public float timeForHint = 5.0f;
-
-    public GameObject dialogObject;
 
     public GameObject gatesObject;
     public GameObject canvasObject;
@@ -192,25 +188,6 @@ public class GameBehavior : MonoBehaviour
                 break;
             }
         }
-
-        character.SetActive(true);
-        if (!canBeReduced)
-        {
-            GameData.completedLevels[GameData.CurrLevel] = true;
-            if (!hintUsed)
-            {
-                //levelScores[currLevel] = 3;
-                GameData.CurrLevel += 1;
-                //currLevel += 1;
-            }
-            textbox.text = "Great job! The program can finally run!";
-
-            timeToNextLevel = Time.time + TIME_BUFFER;
-        }
-        else {
-            textbox.text = "The program can be simplified a bit more.\nRemember, you can use the arrow keys to move around. If this level is too challenging you can always help us simplify another circuit then try this one again!";
-            characterTimeout.startTimer();
-        }
     }
 
 
@@ -247,9 +224,6 @@ public class GameBehavior : MonoBehaviour
         }
     }
 
-    public void dialogTimeout() {
-        character.SetActive(false);
-    }
 
     public void toMenu() {
         SceneManager.LoadScene("Menu");
