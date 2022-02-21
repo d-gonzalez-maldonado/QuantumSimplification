@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameData
 {
-    public static int CurrLevel { get; set; } = 13;
+    public static int CurrLevel { get; set; } = 0;
     public static int max_level = 32;
     public static bool[] completedLevels = new bool[Constants.N_LEVELS];
 
