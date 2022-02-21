@@ -5,8 +5,10 @@ using UnityEngine;
 public class BaseGateBehavior : MonoBehaviour
 {
 
-    public LinkedListNode<GateData> nodeRef;
+    public int x;
+    public int y;
 
+    public GameBehavior gameBehavior;
     public BaseGateOffsetBehavior offsetBehavior;
     public Animation scaleAnimation;
 
@@ -14,7 +16,7 @@ public class BaseGateBehavior : MonoBehaviour
 
     public Color selectionColor;
 
-    private bool selected = false;
+    public bool selected = false;
 
 
     private void Start()
@@ -34,6 +36,7 @@ public class BaseGateBehavior : MonoBehaviour
             gateSprite.color = new Color(1f, 1f, 1f);
 		}
 
+        gameBehavior.toggleGate(this);
     }
 
     public void setSortingIndex(int i)

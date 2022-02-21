@@ -1385,6 +1385,7 @@ GameObject:
   - component: {fileID: 1468146783}
   - component: {fileID: 1468146782}
   - component: {fileID: 1468146784}
+  - component: {fileID: 1468146785}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1409,6 +1410,10 @@ MonoBehaviour:
   timeForHint: 5
   gatesObject: {fileID: 434693894}
   canvasObject: {fileID: 694478395}
+  camera: {fileID: 519420031}
+  sparkPrefab: {fileID: 4879603963366128027, guid: d9f92bc8ed886477589853d418ef1f4b, type: 3}
+  linePrefab: {fileID: 567173000019804377, guid: 5c5420ba8b92c4b42ba7e7f3d82a2c88, type: 3}
+  linesTransform: {fileID: 2099737847}
 --- !u!4 &1468146783
 Transform:
   m_ObjectHideFlags: 0
@@ -1432,11 +1437,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1468146781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 990d2c608a3204e60b83a9250b6989ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f8eec7b07fcb4254a01a6868a92d8fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linePrefab: {fileID: 567173000019804377, guid: 5c5420ba8b92c4b42ba7e7f3d82a2c88, type: 3}
-  uiText: {fileID: 1258164124}
+--- !u!114 &1468146785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468146781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760fcbc0508774099b07d363c3b4a994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeManager: {fileID: 1468146784}
+  timeout: 4.2
+  repeat: 0
+  autoStart: 0
+  targets:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1468146782}
+        m_TargetAssemblyTypeName: GameBehavior, Assembly-CSharp
+        m_MethodName: loadNextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1572760642
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,7 +29,7 @@ public class GTimer : MonoBehaviour
         if(currWakeup > 0)
         {
             active = false;
-            //timeManager.deregisterTimer(currWakeup, currIndex);
+            timeManager.deregisterTimer(currWakeup, currIndex);
             currWakeup = -1;
             currIndex = -1;
 	    }
@@ -52,6 +52,8 @@ public class GTimer : MonoBehaviour
         if (repeat && active)
         {
             var res = timeManager.registerTimer(timeout, callBack);
+            currWakeup = res.Item1;
+            currIndex = res.Item2;
 
 	    }
     }
