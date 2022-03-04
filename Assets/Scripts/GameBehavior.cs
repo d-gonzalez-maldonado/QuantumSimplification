@@ -31,8 +31,6 @@ public class GameBehavior : MonoBehaviour
     public Transform linesTransform;
     //private HashSet<LinkedListNode<GateData>> selection = new HashSet<LinkedListNode<GateData>>();
 
-    private int currLevel = 0;
-
     private float timeToNextLevel = float.MaxValue;
     private float hintTimer = 0;
 
@@ -342,7 +340,7 @@ public class GameBehavior : MonoBehaviour
 
     public void goToLevel(int l)
     {
-        currLevel = l;
+        //GameData.currLevel = l;
         //levelGen = GetComponent<LevelGenerator>();
         //levelGen.genLevel(currLevel);
 
@@ -451,7 +449,6 @@ public class GameBehavior : MonoBehaviour
         }
         if (simplified)
         {
-            currLevel += 1;
             GTimer nextLevel = GetComponent<GTimer>();
             nextLevel.startTimer();
         }
@@ -498,7 +495,8 @@ public class GameBehavior : MonoBehaviour
 
     public void loadNextLevel()
     {
-        GameData.completedLevels[currLevel] = true;
+        GameData.completedLevels[GameData.CurrLevel] = true;
+        Debug.Log(GameData.completedLevels);
         GameData.CurrLevel += 1;
 
         SceneManager.LoadScene(GameData.getNextScene());
